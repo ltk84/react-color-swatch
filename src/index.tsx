@@ -88,7 +88,7 @@ const Swatch = React.forwardRef<HTMLDivElement, SwatchProps>((props, ref) => {
               checked: !!checked,
               disabled: !!disabled,
               style: { ...rectStyle, background },
-              onClick: () => handleClick(background),
+              onClick: () => disabled ? {} : handleClick(background),
             });
           }
           const child =
@@ -104,7 +104,7 @@ const Swatch = React.forwardRef<HTMLDivElement, SwatchProps>((props, ref) => {
               tabIndex={0}
               key={idx}
               title={title}
-              onClick={() => handleClick(background)}
+              onClick={() => disabled ? {} : handleClick(background)}
               {...rectProps}
               children={child}
               style={{ ...rectStyle, background }}

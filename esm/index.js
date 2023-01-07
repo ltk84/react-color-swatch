@@ -67,7 +67,7 @@ var Swatch = /*#__PURE__*/React.forwardRef((props, ref) => {
           style: _extends({}, rectStyle, {
             background
           }),
-          onClick: () => handleClick(background)
+          onClick: () => disabled ? {} : handleClick(background)
         });
       }
       var child = rectProps.children && /*#__PURE__*/React.isValidElement(rectProps.children) ? /*#__PURE__*/React.cloneElement(rectProps.children, {
@@ -78,7 +78,7 @@ var Swatch = /*#__PURE__*/React.forwardRef((props, ref) => {
       return /*#__PURE__*/_jsx("div", _extends({
         tabIndex: 0,
         title: title,
-        onClick: () => handleClick(background)
+        onClick: () => disabled ? {} : handleClick(background)
       }, rectProps, {
         children: child,
         style: _extends({}, rectStyle, {
